@@ -4,184 +4,189 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulir Penyewaan</title>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: 'Space Grotesk', sans-serif;
-            margin: 0;
-            padding: 20px;
-            background-color: #f0f0f0;
-            color: #1a1a1a;
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            min-height: 100vh;
-        }
+    font-family: 'Space Grotesk', 'Roboto', sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #E8F1FF;
+    color: #1A1A1A;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+}
 
-        .container {
-            background-color: #fff;
-            padding: 35px;
-            border: 3px solid #1a1a1a;
-            border-radius: 4px;
-             box-shadow: 8px 8px 0 #1a1a1a;
-            width: 90%;
-            max-width: 700px;
-            position: relative;
-           top: 0;
-           left: 0;
-           transition: all 0.2s ease;
-        }
-        .container:hover {
-          top: -2px;
-           left: -2px;
-            box-shadow: 10px 10px 0 #1a1a1a;
-        }
-        h2 {
-            text-align: center;
-             margin-bottom: 35px;
-            color: #1a1a1a;
-           font-weight: 700;
-             font-size: 2.5em;
-             text-transform: uppercase;
-               letter-spacing: 1px;
-               border-bottom: 3px solid #4A78F4;
-               padding-bottom: 10px;
-        }
-        .form-section {
-            margin-bottom: 30px;
-             border: 2px solid #4A78F4;
-              padding: 25px;
-                border-radius: 4px;
-               background-color: #f5f9ff;
-               position: relative;
-            transition: all 0.3s ease;
-         }
-           .form-section:hover {
-                transform: translate(-2px, -2px);
-              box-shadow: 4px 4px 0 #4A78F4;
-           }
-            .form-section h3 {
-               margin: -25px -25px 20px -25px;
-                 padding: 15px 25px;
-                 background-color: #4A78F4;
-                color: white;
-               font-weight: 600;
-                  letter-spacing: 0.5px;
-         }
-        .form-group {
-            margin-bottom: 20px;
-        }
-        .form-group label {
-            display: block;
-            margin-bottom: 6px;
-            color: #1a1a1a;
-             font-weight: 600;
-            font-size: 1.1em;
-        }
-        .form-group input[type="text"],
-        .form-group input[type="tel"],
-        .form-group input[type="date"],
-        .form-group input[type="number"],
-        .form-group textarea,
-        .form-group select {
-            width: 100%;
-            padding: 12px;
-            border: 2px solid #1a1a1a;
-            border-radius: 4px;
-           box-sizing: border-box;
-            font-size: 1em;
-             background-color: white;
-            transition: all 0.2s ease;
-        }
-          .form-group input:focus,
-        .form-group textarea:focus,
-          .form-group select:focus {
-            outline: none;
-           border-color: #4A78F4;
-            box-shadow: 4px 4px 0 #4A78F4;
-           transform: translate(-2px, -2px);
-        }
-        .form-group button {
-           background-color: #4A78F4;
-            color: white;
-           padding: 15px 25px;
-             border: 2px solid #1a1a1a;
-            border-radius: 4px;
-            cursor: pointer;
-             display: block;
-            width: 100%;
-             font-weight: 600;
-           font-size: 1.1em;
-             text-transform: uppercase;
-           letter-spacing: 1px;
-            transition: all 0.2s ease;
-            position: relative;
-             top: 0;
-             left: 0;
-        }
-        .form-group button:hover {
-             background-color: #3961E3;
-            transform: translate(-4px, -4px);
-             box-shadow: 4px 4px 0 #1a1a1a;
-          }
-           .form-group button:active {
-               transform: translate(0, 0);
-            box-shadow: none;
-           }
-        .form-group input[type="file"] {
-           width: 100%;
-           padding: 10px;
-            border: 2px solid #1a1a1a;
-           border-radius: 4px;
-           margin-bottom: 10px;
-            background-color: white;
-        }
-        .form-group .note {
-            font-style: italic;
-            color: #4A78F4;
-            margin-top: 6px;
-           font-size: 0.9em;
-           font-weight: 500;
-        }
-        #step2, #step3, #step4 {
-            display: none;
-        }
-        #qrcode {
-            text-align: center;
-         }
-          /* Animation classes */
-        .form-section {
-            opacity: 1;
-             transition: opacity 0.3s ease-in-out, height 0.3s ease-in-out;
-        }
-        .form-section.hidden {
-            opacity: 0;
-           height: 0;
-           overflow: hidden;
-            padding-bottom: 0;
-           border-bottom: none;
-             margin-bottom: 0;
-         }
-     @media (max-width: 600px) {
-           .container {
-              width: 95%;
-               padding: 20px;
-          }
-           .form-section {
-                padding: 15px;
-          }
-          .form-section h3 {
-               margin: -15px -15px 15px -15px;
-                padding: 12px 15px;
-          }
-     }
+.container {
+    background-color: #FFFFFF;
+    padding: 35px;
+    border: 3px solid #1A1A1A;
+    border-radius: 2px;
+    box-shadow: 8px 8px 0 #1A1A1A;
+    width: 90%;
+    max-width: 700px;
+    position: relative;
+    top: 0;
+    left: 0;
+    transition: all 0.2s ease;
+}
+
+.container:hover {
+    top: -2px;
+    left: -2px;
+    box-shadow: 10px 10px 0 #1A1A1A;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #1A1A1A;
+    font-weight: 700;
+    font-size: 2.5em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 3px solid #4A78F4;
+    padding-bottom: 10px;
+}
+
+.form-section {
+    margin-bottom: 35px;
+    border: 2px solid #4A78F4;
+    padding: 25px;
+    border-radius: 2px;
+    background-color: #F5F9FF;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.form-section:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 4px 4px 0 #4A78F4;
+}
+
+.form-section h3 {
+    margin: -25px -25px 20px -25px;
+    padding: 15px 25px;
+    background-color: #4A78F4;
+    color: white;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #1A1A1A;
+    font-weight: 600;
+    font-size: 1.1em;
+}
+
+.form-group input[type="text"],
+.form-group input[type="tel"],
+.form-group input[type="date"],
+.form-group input[type="number"],
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #1A1A1A;
+    border-radius: 2px;
+    box-sizing: border-box;
+    font-size: 1em;
+    background-color: white;
+    transition: all 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #4A78F4;
+    box-shadow: 4px 4px 0 #4A78F4;
+    transform: translate(-2px, -2px);
+}
+
+.form-group button {
+    background-color: #4A78F4;
+    color: white;
+    padding: 15px 25px;
+    border: 2px solid #1A1A1A;
+    border-radius: 2px;
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    font-weight: 600;
+    font-size: 1.1em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.2s ease;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+.form-group button:hover {
+    background-color: #3961E3;
+    transform: translate(-4px, -4px);
+    box-shadow: 4px 4px 0 #1A1A1A;
+}
+
+.form-group button:active {
+    transform: translate(0, 0);
+    box-shadow: none;
+}
+
+.form-group input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #1A1A1A;
+    border-radius: 2px;
+    margin-bottom: 10px;
+    background-color: white;
+}
+
+.form-group .note {
+    font-style: italic;
+    color: #4A78F4;
+    margin-top: 6px;
+    font-size: 0.9em;
+    font-weight: 500;
+}
+
+/* Animation classes */
+.form-section.hidden {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+@media (max-width: 600px) {
+    .container {
+        width: 95%;
+        padding: 20px;
+    }
+    
+    .form-section {
+        padding: 15px;
+    }
+    
+    .form-section h3 {
+        margin: -15px -15px 15px -15px;
+        padding: 12px 15px;
+    }
+}
+ #qrcode{
+       text-align: center;
+   }
     </style>
 </head>
 <body>
     <div class="container">
         <h2>Formulir Penyewaan</h2>
-        <form id="sewaForm" enctype="multipart/form-data">
-            <div id="step1" class="form-section">
+        <form id="sewaForm">
+           <div id="step1" class="form-section">
                 <h3>Data Penyewa</h3>
                 <div class="form-group">
                     <label for="namaPenyewa">Nama Lengkap:</label>
@@ -203,14 +208,6 @@
                     <label for="alamatDomisili">Alamat Domisili Saat Ini:</label>
                     <textarea id="alamatDomisili" name="alamatDomisili" rows="3" required></textarea>
                 </div>
-                <div class="form-group" style="display: none;">
-                    <label for="lokasiPengguna">Lokasi Pengguna:</label>
-                    <input type="text" id="lokasiPengguna" name="lokasiPengguna" readonly>
-                </div>
-                <div class="form-group" style="display: none;">
-                    <label for="lokasiMeta">Lokasi Meta:</label>
-                    <input type="text" id="lokasiMeta" name="lokasiMeta" readonly>
-                </div>
                 <div class="form-group">
                     <button type="button" id="nextStep1">Lanjut</button>
                 </div>
@@ -223,73 +220,68 @@
                 </div>
                 <div class="form-group">
                     <label for="hubunganPenyewa">Hubungan dengan Penyewa:</label>
-                    <select id="hubunganPenyewa" name="hubunganPenyewa" required>
-                        <option value="" disabled selected>Pilih Hubungan</option>
-                        <option value="Saudara">Saudara</option>
-                        <option value="Orang Tua">Orang Tua</option>
-                        <option value="Teman">Teman</option>
-                    </select>
+                    <input type="text" id="hubunganPenyewa" name="hubunganPenyewa" required>
                 </div>
-                <div class="form-group">
-                    <label for="teleponPenjamin">Nomor Telepon Penjamin:</label>
-                    <input type="tel" id="teleponPenjamin" name="teleponPenjamin" required>
-                </div>
+                 <div class="form-group">
+                     <label for="teleponPenjamin">Nomor Telepon Penjamin:</label>
+                     <input type="tel" id="teleponPenjamin" name="teleponPenjamin" required>
+                 </div>
                 <div class="form-group">
                     <label for="alamatPenjamin">Alamat Domisili Penjamin/Keluarga:</label>
-                    <textarea id="alamatPenjamin" name="alamatPenjamin" rows="3" required></textarea>
+                   <textarea id="alamatPenjamin" name="alamatPenjamin" rows="3" required></textarea>
                 </div>
-                <div class="form-group">
-                    <label for="tanggalSewa">Sewa untuk Hari & Tanggal:</label>
-                    <input type="date" id="tanggalSewa" name="tanggalSewa" required>
+                 <div class="form-group">
+                     <label for="tanggalSewa">Sewa untuk Hari & Tanggal:</label>
+                     <input type="date" id="tanggalSewa" name="tanggalSewa" required>
                 </div>
-                <div class="form-group">
-                    <label for="durasiSewa">Berapa Hari:</label>
-                    <input type="number" id="durasiSewa" name="durasiSewa" min="1" required>
-                </div>
-                <div class="form-group">
-                    <label for="tujuanSewa">Tujuan Sewa:</label>
-                    <textarea id="tujuanSewa" name="tujuanSewa" rows="3" required></textarea>
-                </div>
-                <div class="form-group">
-                    <label for="totalBiaya">Total Biaya Sewa:</label>
-                    <input type="text" id="totalBiaya" name="totalBiaya" readonly>
-                </div>
+                  <div class="form-group">
+                      <label for="durasiSewa">Berapa Hari:</label>
+                      <input type="number" id="durasiSewa" name="durasiSewa" min="1" required>
+                  </div>
+                 <div class="form-group">
+                      <label for="tujuanSewa">Tujuan Sewa:</label>
+                      <textarea id="tujuanSewa" name="tujuanSewa" rows="3" required></textarea>
+                  </div>
+                     <div class="form-group">
+                         <label for="totalBiaya">Total Biaya Sewa:</label>
+                          <input type="text" id="totalBiaya" name="totalBiaya" readonly>
+                     </div>
                 <div class="form-group">
                     <button type="button" id="nextStep2">Lanjut</button>
                 </div>
             </div>
-            <div id="step3" class="form-section">
-                <h3>Lampiran Dokumen</h3>
+
+             <div id="step3" class="form-section">
+                 <h3>Lampiran Dokumen</h3>
                 <div class="form-group">
-                    <label>Foto Identitas Penyewa (2 Identitas):</label>
-                    <input type="file" name="identitasPenyewa1" accept="image/*" required>
-                    <input type="file" name="identitasPenyewa2" accept="image/*" required>
-                    <p class="note">E-KTP/NPWP/SIM/BPJS (2 identitas dengan nama sama)</p>
-                </div>
-                <div class="form-group">
-                    <label>Foto Rumah/Domisili (Tampak Depan):</label>
-                    <input type="file" name="fotoRumah" accept="image/*" required>
-                </div>
-                <div class="form-group">
+                   <label>Foto Identitas Penyewa (2 Identitas):</label>
+                   <input type="file" name="identitasPenyewa1" accept="image/*" required>
+                     <input type="file" name="identitasPenyewa2" accept="image/*" required>
+                     <p class="note">E-KTP/NPWP/SIM/BPJS (2 identitas dengan nama sama)</p>
+                 </div>
+                 <div class="form-group">
+                     <label>Foto Rumah/Domisili (Tampak Depan):</label>
+                     <input type="file" name="fotoRumah" accept="image/*" required>
+                 </div>
+                 <div class="form-group">
                     <label>Foto Identitas Penjamin:</label>
                     <input type="file" name="identitasPenjamin" accept="image/*" required>
                 </div>
-                <div class="form-group">
-                    <button type="button" id="prevStep3">Kembali</button>
-                    <button type="button" id="showQris">Lanjut Pembayaran</button>
+                 <div class="form-group">
+                     <button type="button" id="prevStep3">Kembali</button>
+                     <button type="button" id="showQris">Lanjut Pembayaran</button>
+                  </div>
+             </div>
+                <div id="step4" class="form-section" style="display:none">
+                    <h3>Pembayaran QRIS</h3>
+                    <p>Silahkan Scan QR Code Dibawah Ini Untuk Melanjutkan Pembayaran</p>
+                  <div id="qrcode"></div>
+                    <button type="button" id="backToForm">Kembali ke Formulir</button>
                 </div>
-            </div>
-            <div id="step4" class="form-section" style="display:none">
-                <h3>Pembayaran QRIS</h3>
-                <p>Silahkan Scan QR Code Dibawah Ini Untuk Melanjutkan Pembayaran</p>
-                <div id="qrcode"></div>
-                <button type="button" id="backToForm">Kembali ke Formulir</button>
-            </div>
         </form>
-        <input type="hidden" id="qrisInput" value="00020101021126710019ID.CO.CIMBNIAGA.WWW011893600022000040943502150000083009010470303UMI51450015ID.OR.QRNPG.WWW0215ID10221659161000303UMI5204599953033605802ID5914MITRABL*5007216006JEPARA61055941162120708M006057163042A1F">
-        <input type="hidden" id="scriptURL" value="https://script.google.com/macros/s/AKfycbzd6B3rDBWRyRkBsT7c5K21Fx21IfB4SsXuWbeMucQ5OI8DYU23TxODfPMNzzbaEFELZQ/exec">
+       <input type="hidden" id="qrisInput" value="00020101021126710019ID.CO.CIMBNIAGA.WWW011893600022000040943502150000083009010470303UMI51450015ID.OR.QRNPG.WWW0215ID10221659161000303UMI5204599953033605802ID5914MITRABL*5007216006JEPARA61055941162120708M006057163042A1F">
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
     <script>
          function pad(number) {
                 return number < 10 ? '0' + number : number.toString();
@@ -306,14 +298,17 @@
            let hex = (crc & 0xFFFF).toString(16).toUpperCase();
            return hex.length === 3 ? "0" + hex : hex;
         }
-        function makeString(qris, { nominal } = {}) {
+
+       function makeString(qris, { nominal } = {}) {
             let qrisModified = qris.slice(0, -4).replace("010211", "010212");
             let qrisParts = qrisModified.split("5802ID");
-           let amount = "54" + pad(nominal.toString().length) + nominal;
+
+            let amount = "54" + pad(nominal.toString().length) + nominal;
             amount += "5802ID";
 
             let output = qrisParts[0].trim() + amount + qrisParts[1].trim();
            output += toCRC16(output);
+
             return output;
         }
         document.addEventListener('DOMContentLoaded', function () {
@@ -325,186 +320,140 @@
             const nextStep1 = document.getElementById('nextStep1');
             const nextStep2 = document.getElementById('nextStep2');
             const prevStep3 = document.getElementById('prevStep3');
-            const showQris = document.getElementById('showQris');
-            const backToForm = document.getElementById('backToForm');
-            const durasiSewaInput = document.getElementById('durasiSewa');
+             const showQris = document.getElementById('showQris');
+              const backToForm = document.getElementById('backToForm');
+              const durasiSewaInput = document.getElementById('durasiSewa');
             const totalBiayaInput = document.getElementById('totalBiaya');
-            const lokasiPenggunaInput = document.getElementById('lokasiPengguna');
-            const lokasiMetaInput = document.getElementById('lokasiMeta');
-            const scriptURL = document.getElementById('scriptURL').value;
             const hargaPerHari = 5000;
 
             // Fungsi untuk validasi dan transisi ke step berikutnya
-            function validateAndTransition(currentStep, nextStep) {
-                if (currentStep === step1) {
-                    const namaPenyewa = document.getElementById('namaPenyewa').value.trim();
-                    const asalKtp = document.getElementById('asalKtp').value.trim();
-                    const nomorIdentitas = document.getElementById('nomorIdentitas').value.trim();
-                    const teleponPenyewa = document.getElementById('teleponPenyewa').value.trim();
-                    const alamatDomisili = document.getElementById('alamatDomisili').value.trim();
-                    if (namaPenyewa === '' || asalKtp === '' || nomorIdentitas === '' || teleponPenyewa === '' || alamatDomisili === '') {
+           function validateAndTransition(currentStep, nextStep) {
+              if (currentStep === step1) {
+                const namaPenyewa = document.getElementById('namaPenyewa').value.trim();
+                const asalKtp = document.getElementById('asalKtp').value.trim();
+                const nomorIdentitas = document.getElementById('nomorIdentitas').value.trim();
+                const teleponPenyewa = document.getElementById('teleponPenyewa').value.trim();
+                const alamatDomisili = document.getElementById('alamatDomisili').value.trim();
+                    if (namaPenyewa === '' || asalKtp === '' || nomorIdentitas==='' || teleponPenyewa === '' || alamatDomisili ==='') {
                         alert('Mohon lengkapi semua data pada bagian Data Penyewa!');
                         return;
                     }
-                } else if (currentStep === step2) {
-                    const namaPenjamin = document.getElementById('namaPenjamin').value.trim();
-                    const hubunganPenyewa = document.getElementById('hubunganPenyewa').value;
-                    const teleponPenjamin = document.getElementById('teleponPenjamin').value.trim();
-                    const alamatPenjamin = document.getElementById('alamatPenjamin').value.trim();
-                    const tanggalSewa = document.getElementById('tanggalSewa').value;
-                    const durasiSewa = document.getElementById('durasiSewa').value;
-                    const tujuanSewa = document.getElementById('tujuanSewa').value.trim();
-                    if (namaPenjamin === '' || hubunganPenyewa === '' || teleponPenjamin === '' || alamatPenjamin === '' || tanggalSewa === '' || durasiSewa === '' || tujuanSewa === '') {
-                        alert('Mohon lengkapi semua data pada bagian Data Penjamin dan Detail Penyewaan!');
-                        return;
-                    }
-                   const durasi = parseInt(durasiSewa, 10);
+            }else if(currentStep === step2){
+                const namaPenjamin = document.getElementById('namaPenjamin').value.trim();
+                 const hubunganPenyewa = document.getElementById('hubunganPenyewa').value.trim();
+                const teleponPenjamin = document.getElementById('teleponPenjamin').value.trim();
+                const alamatPenjamin = document.getElementById('alamatPenjamin').value.trim();
+                const tanggalSewa = document.getElementById('tanggalSewa').value;
+                 const durasiSewa = document.getElementById('durasiSewa').value;
+                const tujuanSewa = document.getElementById('tujuanSewa').value.trim();
+                  if (namaPenjamin === '' || hubunganPenyewa===''|| teleponPenjamin === '' || alamatPenjamin==='' || tanggalSewa === '' || durasiSewa === '' || tujuanSewa === '') {
+                     alert('Mohon lengkapi semua data pada bagian Data Penjamin dan Detail Penyewaan!');
+                         return;
+                   }
+                 // Hitung total biaya
+                  const durasi = parseInt(durasiSewa, 10);
                      if(!isNaN(durasi)){
-                        const totalBiaya = durasi * hargaPerHari;
-                        totalBiayaInput.value = totalBiaya.toLocaleString('id-ID', {
-                            style: 'currency',
-                         currency: 'IDR'
-                    });
-                } else {
-                    totalBiayaInput.value = '';
-                    }
-             }
-            currentStep.classList.add('hidden');
+                         const totalBiaya = durasi * hargaPerHari;
+                         totalBiayaInput.value = totalBiaya.toLocaleString('id-ID', { style: 'currency', currency: 'IDR' });
+                      }else{
+                         totalBiayaInput.value = ''; // Kosongkan jika input tidak valid
+                     }
+            }
+
+               currentStep.classList.add('hidden'); // Efek smooth hide
                 setTimeout(function() {
                     currentStep.style.display = 'none';
                     nextStep.style.display = 'block';
-                    nextStep.classList.remove('hidden');
-                }, 300);
-            }
-            function getAccurateLocation() {
-               if (navigator.geolocation) {
-                   navigator.geolocation.getCurrentPosition(showPosition, showError, {
-                        enableHighAccuracy: true,
-                        timeout: 10000,
-                       maximumAge: 0
-                 });
-              } else {
-                 lokasiPenggunaInput.value = "Geolocation tidak didukung browser ini.";
-              }
-           }
-            function showPosition(position) {
-                const latitude = position.coords.latitude;
-                const longitude = position.coords.longitude;
-                const accuracy = position.coords.accuracy;
-                lokasiPenggunaInput.value = `Latitude: ${latitude}, Longitude: ${longitude}, Akurasi: ${accuracy} meter`;
-           }
-           function showError(error) {
-                switch (error.code) {
-                   case error.PERMISSION_DENIED:
-                       lokasiPenggunaInput.value = "Izin Geolocation ditolak.";
-                        break;
-                    case error.POSITION_UNAVAILABLE:
-                         lokasiPenggunaInput.value = "Informasi lokasi tidak tersedia.";
-                      break;
-                    case error.TIMEOUT:
-                       lokasiPenggunaInput.value = "Permintaan Geolocation timeout.";
-                        break;
-                     case error.UNKNOWN_ERROR:
-                       lokasiPenggunaInput.value = "Terjadi kesalahan yang tidak diketahui.";
-                        break;
-               }
-           }
-           getAccurateLocation();
-           const metaLocation = document.querySelector('meta[name="location"]').content;
-           lokasiMetaInput.value = metaLocation;
+                    nextStep.classList.remove('hidden'); // Efek smooth show
+                }, 300); //delay time animation
+          }
+        
             nextStep1.addEventListener('click', function () {
-                validateAndTransition(step1, step2);
-            });
-            nextStep2.addEventListener('click', function () {
-               validateAndTransition(step2, step3);
-            });
-            durasiSewaInput.addEventListener('input', function() {
-                 const durasi = parseInt(durasiSewaInput.value, 10);
-                 if (!isNaN(durasi)) {
+               validateAndTransition(step1, step2);
+             });
+
+          nextStep2.addEventListener('click', function () {
+              validateAndTransition(step2, step3);
+          });
+         
+            durasiSewaInput.addEventListener('input', function(){
+                const durasi = parseInt(durasiSewaInput.value, 10);
+                 if(!isNaN(durasi)){
                      const totalBiaya = durasi * hargaPerHari;
-                    totalBiayaInput.value = totalBiaya.toLocaleString('id-ID', {
-                        style: 'currency',
-                         currency: 'IDR'
-                    });
-                } else {
-                   totalBiayaInput.value = '';
-                }
-           });
-            prevStep3.addEventListener('click', function() {
+                     totalBiayaInput.value = totalBiaya.toLocaleString('id-ID', { style: 'currency', currency: 'IDR' });
+                  }else{
+                     totalBiayaInput.value = ''; // Kosongkan jika input tidak valid
+                 }
+            });
+
+            prevStep3.addEventListener('click', function () {
                 step3.classList.add('hidden');
-                setTimeout(function() {
+                setTimeout(function(){
                     step3.style.display = 'none';
                     step2.style.display = 'block';
-                   step2.classList.remove('hidden');
-                 }, 300);
-           });
-            showQris.addEventListener('click', function() {
+                    step2.classList.remove('hidden');
+                }, 300);
+            });
+
+          showQris.addEventListener('click', function(){
                 const identitasPenyewa1 = document.querySelector('input[name="identitasPenyewa1"]').files[0];
                 const identitasPenyewa2 = document.querySelector('input[name="identitasPenyewa2"]').files[0];
-                 const fotoRumah = document.querySelector('input[name="fotoRumah"]').files[0];
-                 const identitasPenjamin = document.querySelector('input[name="identitasPenjamin"]').files[0];
-                 if (!identitasPenyewa1 || !identitasPenyewa2 || !fotoRumah || !identitasPenjamin) {
+                const fotoRumah = document.querySelector('input[name="fotoRumah"]').files[0];
+                const identitasPenjamin = document.querySelector('input[name="identitasPenjamin"]').files[0];
+                 if(!identitasPenyewa1 || !identitasPenyewa2 || !fotoRumah || !identitasPenjamin){
                        alert('Mohon lampirkan semua file!');
-                       return;
+                      return;
                  }
-               const nominal = parseInt(totalBiayaInput.value.replace(/[^\d]/g, ''));
-                step3.classList.add('hidden');
-               setTimeout(function() {
-                    step3.style.display = 'none';
-                    step4.style.display = 'block';
-                      step4.classList.remove('hidden');
-                   const qrisInput = document.getElementById('qrisInput').value.trim();
-                     const qrisDinamis = makeString(qrisInput, {
-                         nominal: nominal
-                    });
-                   const qrcodeElement = document.getElementById('qrcode');
-                   qrcodeElement.innerHTML = '';
-                   QRCode.toCanvas(qrisDinamis, {
-                         margin: 2,
-                         width: 200,
-                        scale: 8
-                  }, function(err, canvas) {
-                     if (err) {
-                           console.error(err);
+              const nominal =  parseInt(totalBiayaInput.value.replace(/[^\d]/g, ''));
+                  step3.classList.add('hidden');
+                  setTimeout(function(){
+                       step3.style.display = 'none';
+                       step4.style.display = 'block';
+                         step4.classList.remove('hidden');
+                    const qrisInput = document.getElementById('qrisInput').value.trim();
+                     const qrisDinamis = makeString(qrisInput, { nominal: nominal });
+                        const qrcodeElement = document.getElementById('qrcode');
+                         qrcodeElement.innerHTML = '';
+                        QRCode.toCanvas(qrisDinamis, { 
+                              margin: 2, 
+                              width: 200,
+                            scale: 8
+                         }, function (err, canvas) {
+                           if (err) {
+                            console.error(err);
                             alert('Gagal membuat QR Code');
-                       } else {
-                            qrcodeElement.appendChild(canvas);
-                        }
-                    });
-              }, 300);
-          });
-            backToForm.addEventListener('click', function() {
+                            } else {
+                             qrcodeElement.appendChild(canvas);
+                            }
+                         });
+                    }, 300);
+
+            });
+             backToForm.addEventListener('click', function(){
                 step4.classList.add('hidden');
-                setTimeout(function() {
-                     step4.style.display = 'none';
-                     step1.style.display = 'block';
-                   step1.classList.remove('hidden');
-                     sewaForm.reset();
-              }, 300);
-          });
-           sewaForm.addEventListener('submit', function (event) {
-               event.preventDefault();
-               const formData = new FormData(sewaForm);
-               const scriptURL = document.getElementById('scriptURL').value;
-                fetch(scriptURL, { method: 'POST', body: formData })
-                   .then(response => {
-                        if (response.ok) {
-                           alert('Formulir berhasil disubmit dan data terkirim!');
-                            sewaForm.reset();
-                            step1.style.display = 'block';
-                             step2.style.display = 'none';
-                             step3.style.display = 'none';
-                      } else {
-                        alert('Terjadi kesalahan dalam mengirim data!');
-                        }
-                 })
-                   .catch(error => {
-                     alert('Terjadi kesalahan dalam mengirim data!');
-                    });
-           });
-           step2.style.display = 'none';
+                   setTimeout(function(){
+                       step4.style.display = 'none';
+                       step1.style.display = 'block';
+                        step1.classList.remove('hidden');
+                   sewaForm.reset();
+                    }, 300);
+
+             })
+
+
+            sewaForm.addEventListener('submit', function (event) {
+                  event.preventDefault();
+                
+                   alert('Formulir berhasil disubmit!');
+                    sewaForm.reset();
+                    step1.style.display = 'block';
+                    step2.style.display = 'none';
+                    step3.style.display = 'none';
+
+            });
+            step2.style.display = 'none';
             step3.style.display = 'none';
-            step4.style.display = 'none';
+             step4.style.display = 'none'
         });
     </script>
 </body>
