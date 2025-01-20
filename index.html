@@ -332,7 +332,7 @@
             const lokasiPenggunaInput = document.getElementById('lokasiPengguna');
             const lokasiMetaInput = document.getElementById('lokasiMeta');
             const scriptURL = document.getElementById('scriptURL').value;
-            const hargaPerHari = 50000;
+            const hargaPerHari = 5000;
 
             // Fungsi untuk validasi dan transisi ke step berikutnya
             function validateAndTransition(currentStep, nextStep) {
@@ -358,18 +358,17 @@
                         alert('Mohon lengkapi semua data pada bagian Data Penjamin dan Detail Penyewaan!');
                         return;
                     }
-                   // Hitung total biaya
-                  const durasi = parseInt(durasiSewa, 10);
+                   const durasi = parseInt(durasiSewa, 10);
                      if(!isNaN(durasi)){
-                         const totalBiaya = durasi * hargaPerHari;
-                       totalBiayaInput.value = totalBiaya.toLocaleString('id-ID', {
-                           style: 'currency',
+                        const totalBiaya = durasi * hargaPerHari;
+                        totalBiayaInput.value = totalBiaya.toLocaleString('id-ID', {
+                            style: 'currency',
                          currency: 'IDR'
-                       });
-                   }else{
-                        totalBiayaInput.value = ''; // Kosongkan jika input tidak valid
+                    });
+                } else {
+                    totalBiayaInput.value = '';
                     }
-                }
+             }
             currentStep.classList.add('hidden');
                 setTimeout(function() {
                     currentStep.style.display = 'none';
@@ -384,128 +383,128 @@
                         timeout: 10000,
                        maximumAge: 0
                  });
-             } else {
+              } else {
                  lokasiPenggunaInput.value = "Geolocation tidak didukung browser ini.";
-            }
-         }
+              }
+           }
             function showPosition(position) {
-                 const latitude = position.coords.latitude;
-                 const longitude = position.coords.longitude;
+                const latitude = position.coords.latitude;
+                const longitude = position.coords.longitude;
                 const accuracy = position.coords.accuracy;
-               lokasiPenggunaInput.value = `Latitude: ${latitude}, Longitude: ${longitude}, Akurasi: ${accuracy} meter`;
+                lokasiPenggunaInput.value = `Latitude: ${latitude}, Longitude: ${longitude}, Akurasi: ${accuracy} meter`;
            }
            function showError(error) {
                 switch (error.code) {
-                    case error.PERMISSION_DENIED:
-                        lokasiPenggunaInput.value = "Izin Geolocation ditolak.";
+                   case error.PERMISSION_DENIED:
+                       lokasiPenggunaInput.value = "Izin Geolocation ditolak.";
                         break;
                     case error.POSITION_UNAVAILABLE:
-                       lokasiPenggunaInput.value = "Informasi lokasi tidak tersedia.";
-                       break;
+                         lokasiPenggunaInput.value = "Informasi lokasi tidak tersedia.";
+                      break;
                     case error.TIMEOUT:
-                        lokasiPenggunaInput.value = "Permintaan Geolocation timeout.";
-                       break;
-                    case error.UNKNOWN_ERROR:
-                         lokasiPenggunaInput.value = "Terjadi kesalahan yang tidak diketahui.";
-                       break;
+                       lokasiPenggunaInput.value = "Permintaan Geolocation timeout.";
+                        break;
+                     case error.UNKNOWN_ERROR:
+                       lokasiPenggunaInput.value = "Terjadi kesalahan yang tidak diketahui.";
+                        break;
                }
-            }
-            getAccurateLocation();
-            const metaLocation = document.querySelector('meta[name="location"]').content;
-            lokasiMetaInput.value = metaLocation;
+           }
+           getAccurateLocation();
+           const metaLocation = document.querySelector('meta[name="location"]').content;
+           lokasiMetaInput.value = metaLocation;
             nextStep1.addEventListener('click', function () {
-               validateAndTransition(step1, step2);
-           });
-            nextStep2.addEventListener('click', function () {
-                validateAndTransition(step2, step3);
+                validateAndTransition(step1, step2);
             });
-           durasiSewaInput.addEventListener('input', function() {
-                const durasi = parseInt(durasiSewaInput.value, 10);
+            nextStep2.addEventListener('click', function () {
+               validateAndTransition(step2, step3);
+            });
+            durasiSewaInput.addEventListener('input', function() {
+                 const durasi = parseInt(durasiSewaInput.value, 10);
                  if (!isNaN(durasi)) {
-                    const totalBiaya = durasi * hargaPerHari;
-                  totalBiayaInput.value = totalBiaya.toLocaleString('id-ID', {
-                       style: 'currency',
-                        currency: 'IDR'
+                     const totalBiaya = durasi * hargaPerHari;
+                    totalBiayaInput.value = totalBiaya.toLocaleString('id-ID', {
+                        style: 'currency',
+                         currency: 'IDR'
                     });
                 } else {
-                  totalBiayaInput.value = '';
-                 }
-           });
-           prevStep3.addEventListener('click', function() {
-                step3.classList.add('hidden');
-                 setTimeout(function() {
-                   step3.style.display = 'none';
-                   step2.style.display = 'block';
-                   step2.classList.remove('hidden');
-                }, 300);
-           });
-           showQris.addEventListener('click', function() {
-                const identitasPenyewa1 = document.querySelector('input[name="identitasPenyewa1"]').files[0];
-               const identitasPenyewa2 = document.querySelector('input[name="identitasPenyewa2"]').files[0];
-               const fotoRumah = document.querySelector('input[name="fotoRumah"]').files[0];
-               const identitasPenjamin = document.querySelector('input[name="identitasPenjamin"]').files[0];
-               if (!identitasPenyewa1 || !identitasPenyewa2 || !fotoRumah || !identitasPenjamin) {
-                    alert('Mohon lampirkan semua file!');
-                     return;
+                   totalBiayaInput.value = '';
                 }
-              const nominal = parseInt(totalBiayaInput.value.replace(/[^\d]/g, ''));
-              step3.classList.add('hidden');
+           });
+            prevStep3.addEventListener('click', function() {
+                step3.classList.add('hidden');
+                setTimeout(function() {
+                    step3.style.display = 'none';
+                    step2.style.display = 'block';
+                   step2.classList.remove('hidden');
+                 }, 300);
+           });
+            showQris.addEventListener('click', function() {
+                const identitasPenyewa1 = document.querySelector('input[name="identitasPenyewa1"]').files[0];
+                const identitasPenyewa2 = document.querySelector('input[name="identitasPenyewa2"]').files[0];
+                 const fotoRumah = document.querySelector('input[name="fotoRumah"]').files[0];
+                 const identitasPenjamin = document.querySelector('input[name="identitasPenjamin"]').files[0];
+                 if (!identitasPenyewa1 || !identitasPenyewa2 || !fotoRumah || !identitasPenjamin) {
+                       alert('Mohon lampirkan semua file!');
+                       return;
+                 }
+               const nominal = parseInt(totalBiayaInput.value.replace(/[^\d]/g, ''));
+                step3.classList.add('hidden');
                setTimeout(function() {
                     step3.style.display = 'none';
                     step4.style.display = 'block';
                       step4.classList.remove('hidden');
-                    const qrisInput = document.getElementById('qrisInput').value.trim();
-                   const qrisDinamis = makeString(qrisInput, {
-                        nominal: nominal
-                   });
+                   const qrisInput = document.getElementById('qrisInput').value.trim();
+                     const qrisDinamis = makeString(qrisInput, {
+                         nominal: nominal
+                    });
                    const qrcodeElement = document.getElementById('qrcode');
-                    qrcodeElement.innerHTML = '';
+                   qrcodeElement.innerHTML = '';
                    QRCode.toCanvas(qrisDinamis, {
-                        margin: 2,
-                        width: 200,
-                       scale: 8
-                 }, function(err, canvas) {
-                    if (err) {
-                            console.error(err);
+                         margin: 2,
+                         width: 200,
+                        scale: 8
+                  }, function(err, canvas) {
+                     if (err) {
+                           console.error(err);
                             alert('Gagal membuat QR Code');
-                      } else {
+                       } else {
                             qrcodeElement.appendChild(canvas);
-                     }
-                  });
-             }, 300);
+                        }
+                    });
+              }, 300);
           });
-           backToForm.addEventListener('click', function() {
+            backToForm.addEventListener('click', function() {
                 step4.classList.add('hidden');
                 setTimeout(function() {
-                    step4.style.display = 'none';
+                     step4.style.display = 'none';
                      step1.style.display = 'block';
                    step1.classList.remove('hidden');
-                    sewaForm.reset();
-               }, 300);
-           });
+                     sewaForm.reset();
+              }, 300);
+          });
            sewaForm.addEventListener('submit', function (event) {
                event.preventDefault();
-                const formData = new FormData(sewaForm);
-                const scriptURL = document.getElementById('scriptURL').value;
+               const formData = new FormData(sewaForm);
+               const scriptURL = document.getElementById('scriptURL').value;
                 fetch(scriptURL, { method: 'POST', body: formData })
                    .then(response => {
                         if (response.ok) {
-                            alert('Formulir berhasil disubmit dan data terkirim!');
+                           alert('Formulir berhasil disubmit dan data terkirim!');
                             sewaForm.reset();
                             step1.style.display = 'block';
-                            step2.style.display = 'none';
-                           step3.style.display = 'none';
-                       } else {
-                             alert('Terjadi kesalahan dalam mengirim data!');
-                      }
-                  })
-                   .catch(error => {
+                             step2.style.display = 'none';
+                             step3.style.display = 'none';
+                      } else {
                         alert('Terjadi kesalahan dalam mengirim data!');
-                   });
+                        }
+                 })
+                   .catch(error => {
+                     alert('Terjadi kesalahan dalam mengirim data!');
+                    });
            });
-          step2.style.display = 'none';
-          step3.style.display = 'none';
-          step4.style.display = 'none';
+           step2.style.display = 'none';
+            step3.style.display = 'none';
+            step4.style.display = 'none';
         });
     </script>
 </body>
